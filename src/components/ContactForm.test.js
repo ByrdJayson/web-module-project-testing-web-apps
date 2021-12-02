@@ -11,11 +11,13 @@ test('renders without errors', ()=>{
 });
 
 test('renders the contact form header', ()=> {
-
+    render(<ContactForm/>);
+    const contactHeader = screen.queryByText('Contact Form');
+    expect(contactHeader).toBeInDocument();
 });
 
 test('renders ONE error message if user enters less then 5 characters into firstname.', async () => {
-
+  render(<ContactForm/>);
 });
 
 test('renders THREE error messages if user enters no values into any fields.', async () => {
